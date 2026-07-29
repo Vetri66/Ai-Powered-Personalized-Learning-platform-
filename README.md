@@ -313,4 +313,5 @@ The system is designed to enhance human teaching rather than replace it, creatin
 <img width="1910" height="1023" alt="Screenshot 2026-05-13 220940" src="https://github.com/user-attachments/assets/142c3719-4848-41da-81af-b2fdd7169f06" />
 <img width="1562" height="1044" alt="Screenshot 2026-05-15 205701" src="https://github.com/user-attachments/assets/5b940d49-5f66-4faf-9b6f-86ba102daac7" />
 <img width="1904" height="1061" alt="Screenshot 2026-05-15 204607" src="https://github.com/user-attachments/assets/86ba4fb0-1df9-48f5-8759-28311ca247cc" />
-
+## Author 
+Vetriselvan M 
