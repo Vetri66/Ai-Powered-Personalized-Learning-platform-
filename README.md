@@ -298,3 +298,19 @@ This platform represents a significant advancement in educational technology, mo
 - **Scalable Education**: Supports large-scale educational initiatives
 
 The system is designed to enhance human teaching rather than replace it, creating a collaborative environment where AI augments educational excellence.
+
+
+## WEB PAGE IMAGES 
+<img width="1915" height="1152" alt="Screenshot 2026-05-13 221243" src="https://github.com/user-attachments/assets/46cd1648-ad0c-446e-bd00-084458b3ed4d" />
+<img width="1597" height="908" alt="Screenshot 2026-05-13 220442" src="https://github.com/user-attachments/assets/2429dc69-955b-4b05-b7cc-e98d9b935fc3" />
+<img width="1907" height="967" alt="Screenshot 2026-05-13 220759" src="https://github.com/user-attachments/assets/e9069593-4d12-425d-9d13-545b9e4156f9" />
+<img width="1912" height="1088" alt="Screenshot 2026-05-13 220911" src="https://github.com/user-attachments/assets/6264091c-68fe-432f-b2ad-4a00f251f185" />
+<img width="1917" height="1085" alt="Screenshot 2026-05-13 221148" src="https://github.com/user-attachments/assets/f13c7c28-94db-4698-876e-ff757f0b57f5" />
+<img width="1912" height="1019" alt="Screenshot 2026-05-13 221128" src="https://github.com/user-attachments/assets/fd50710c-975f-435a-8c01-d1922a8c9ee2" />
+<img width="1879" height="1006" alt="Screenshot 2026-05-13 221117" src="https://github.com/user-attachments/assets/7887c2cd-4bde-4cbc-8870-d2e12484639a" />
+<img width="1885" height="1022" alt="Screenshot 2026-05-13 221044" src="https://github.com/user-attachments/assets/f633b442-68e5-4edd-a31f-37a78696d110" />
+<img width="1906" height="1000" alt="Screenshot 2026-05-13 220956" src="https://github.com/user-attachments/assets/471c9faf-4686-47b4-8456-fe19a51e332b" />
+<img width="1910" height="1023" alt="Screenshot 2026-05-13 220940" src="https://github.com/user-attachments/assets/142c3719-4848-41da-81af-b2fdd7169f06" />
+<img width="1562" height="1044" alt="Screenshot 2026-05-15 205701" src="https://github.com/user-attachments/assets/5b940d49-5f66-4faf-9b6f-86ba102daac7" />
+<img width="1904" height="1061" alt="Screenshot 2026-05-15 204607" src="https://github.com/user-attachments/assets/86ba4fb0-1df9-48f5-8759-28311ca247cc" />
+
