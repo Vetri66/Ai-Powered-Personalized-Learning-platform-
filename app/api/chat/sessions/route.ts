@@ -1,15 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+import { createAdminClient } from '@/lib/supabase/admin'
 
 export async function GET() {
     try {
+        const supabase = createAdminClient()
         const { data, error } = await supabase
             .from('chat_sessions')
             .select('*')
@@ -25,6 +21,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
     try {
+        const supabase = createAdminClient()
         // Authenticate user to get student_id
         const cookieStore = await cookies()
         const supabaseAuth = createServerClient(
@@ -64,6 +61,7 @@ export async function POST(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
     try {
+        const supabase = createAdminClient()
         const { searchParams } = new URL(request.url)
         const id = searchParams.get('id')
 

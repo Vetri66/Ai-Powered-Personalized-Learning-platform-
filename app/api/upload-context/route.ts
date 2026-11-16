@@ -1,17 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
-import OpenAI from 'openai'
 import pdf from 'pdf-parse'
-
-const nvidia = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY!,
-  baseURL: 'https://integrate.api.nvidia.com/v1'
-})
-
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+import { createAdminClient } from '@/lib/supabase/admin'
 
 async function generateEmbedding(text: string): Promise<number[]> {
   const res = await fetch('https://integrate.api.nvidia.com/v1/embeddings', {
@@ -35,6 +24,7 @@ async function generateEmbedding(text: string): Promise<number[]> {
 
 export async function POST(request: NextRequest) {
     try {
+        const supabase = createAdminClient()
         const formData = await request.formData()
         const file = formData.get('file') as File
         const courseId = formData.get('courseId') as string

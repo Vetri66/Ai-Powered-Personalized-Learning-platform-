@@ -1,19 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import OpenAI from 'openai'
-import { createClient } from '@supabase/supabase-js'
-
-const nvidia = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY!,
-  baseURL: 'https://integrate.api.nvidia.com/v1'
-})
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+import { getNvidiaClient } from '@/lib/ai/nvidia'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 export async function POST(request: NextRequest) {
   try {
+    const nvidia = getNvidiaClient()
+    const supabaseAdmin = createAdminClient()
     const { courseContext, conversationHistory, questionCount = 5, topic } = await request.json()
 
     // Fetch uploaded course materials for quiz context

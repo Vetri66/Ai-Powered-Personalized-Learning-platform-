@@ -1,10 +1,5 @@
-import OpenAI from 'openai'
 import { StudentContext } from './student-context'
-
-const nvidia = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY!,
-  baseURL: 'https://integrate.api.nvidia.com/v1'
-})
+import { getNvidiaClient } from './nvidia'
 
 export interface TutorResponse {
   response: string
@@ -249,7 +244,7 @@ RESPONSE GUIDELINES:
 
 Generate a response that teaches rather than tells:`
 
-    const completion = await nvidia.chat.completions.create({
+    const completion = await getNvidiaClient().chat.completions.create({
       model: 'meta/llama-3.3-70b-instruct',
       messages: [
         { role: 'system', content: systemPrompt },

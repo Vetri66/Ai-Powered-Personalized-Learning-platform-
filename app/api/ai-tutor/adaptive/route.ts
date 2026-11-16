@@ -1,20 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import OpenAI from 'openai'
 import { getSystemPromptInLanguage } from '@/lib/languages'
 import type { LanguageCode } from '@/lib/languages'
-
-const nvidia = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY!,
-  baseURL: 'https://integrate.api.nvidia.com/v1'
-})
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+import { getNvidiaClient } from '@/lib/ai/nvidia'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 async function generateEmbedding(text: string): Promise<number[]> {
   const res = await fetch('https://integrate.api.nvidia.com/v1/embeddings', {
@@ -39,6 +29,8 @@ async function generateEmbedding(text: string): Promise<number[]> {
 export async function POST(request: NextRequest) {
   let userMessage = ''
   try {
+    const nvidia = getNvidiaClient()
+    const supabaseAdmin = createAdminClient()
     const body = await request.json()
     const { message, courseContext, conversationHistory, language } = body
     userMessage = message

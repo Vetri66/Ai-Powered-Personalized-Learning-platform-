@@ -1,10 +1,5 @@
-import OpenAI from 'openai'
 import { Course } from '../mongodb/models'
-
-const nvidia = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY!,
-  baseURL: 'https://integrate.api.nvidia.com/v1'
-})
+import { getNvidiaClient } from './nvidia'
 
 async function generateEmbedding(text: string): Promise<number[]> {
   const res = await fetch('https://integrate.api.nvidia.com/v1/embeddings', {
@@ -142,7 +137,7 @@ export class RAGEngine {
       : ''
 
     try {
-      const completion = await nvidia.chat.completions.create({
+      const completion = await getNvidiaClient().chat.completions.create({
         model: 'meta/llama-3.3-70b-instruct',
         messages: [
           { role: 'system', content: 'You are an AI tutor. Answer using only the provided course content.' },
